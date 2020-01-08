@@ -52,10 +52,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'locallibrary.urls'
 
+  #You need to point Django to search for your templates in the templates folder. 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
