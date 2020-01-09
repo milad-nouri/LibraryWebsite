@@ -58,6 +58,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
+        # This codes will make these directories visible to the template loader 
+        # (i.e. to put this directory in the template search path)
             os.path.join(BASE_DIR, 'templates'),
         ],
         'APP_DIRS': True,
@@ -123,3 +125,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = '/'
