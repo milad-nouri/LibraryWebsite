@@ -12,6 +12,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('mybooks/', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
+    path('allborrowed', views.LoanedBooksByLibrariansListView.as_view(), name='all-borrowed')
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

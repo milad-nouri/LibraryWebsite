@@ -73,6 +73,7 @@ class BookInstance(models.Model):
 
     class Meta:
         ordering = ['due_back']
+        permissions = (("can_mark_returned", "Set book as returned"),)
         
     # with list_display in admin.py bodo nabod in farghi nadare
     def __str__(self):

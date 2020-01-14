@@ -1,0 +1,20 @@
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>All Authors: </h1>
+
+    {% if author_list %}
+    <ul>
+
+      {% for author in author_list %} 
+      <li >
+        <a href="{% url 'author-detail' author.pk %}"> {{author.last_name}}, {{author.first_name}} ({{author.date_of_birth}} - {{author.date_of_death}})</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no books borrowed.</p>
+    {% endif %}       
+{% endblock %}
